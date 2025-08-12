@@ -1,7 +1,6 @@
 baseURL = "https://example.com"
 theme = 'hugo-bearblog'
 
-# Basic metadata configuration for your blog.
 title = "Prefect Dev Log"
 author = "Prefect Engineering Team"
 copyright = "Copyright © 2025, Prefect Technologies Inc."
@@ -12,18 +11,19 @@ enableRobotsTXT = true
 disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
 [permalinks]
-  blog = "/:slug/"
-  tags = "/blog/:slug"
+blog = "/:slug/"
+tags = "/blog/:slug"
 
 [params]
-  description = "Create with :heart: by Prefect"
-  title = "Prefect Dev Log"
-  enablePostNavigator = true
-  hideMadeWithLine = true
+description = "Create with :heart: by Prefect"
+title = "Prefect Dev Log"
+enablePostNavigator = true
+hideMadeWithLine = true
+favicon = "images/favicon.png"
 
 [markup]
-  [markup.highlight]
-    style = 'friendly'
-    lineNos = true
-    lineNumbersInTable = false
-    codeFences = true
+[markup.highlight]
+style = 'friendly'
+lineNos = true
+lineNumbersInTable = false
+codeFences = true
