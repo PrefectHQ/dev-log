@@ -1,4 +1,4 @@
-baseURL = "https://example.com"
+baseURL = "https://prefecthq.github.io/dev-log/"
 theme = 'hugo-bearblog'
 
 title = "Prefect Dev Log"
