@@ -10,6 +10,7 @@ enableRobotsTXT = true
 
 disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
+
 [permalinks]
 blog = "/:slug/"
 tags = "/blog/:slug"
@@ -18,7 +19,6 @@ tags = "/blog/:slug"
 description = "Create with :heart: by Prefect"
 title = "Prefect Dev Log"
 enablePostNavigator = true
-hideMadeWithLine = true
 favicon = "images/favicon.png"
 
 [markup]
