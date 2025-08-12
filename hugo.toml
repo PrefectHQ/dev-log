@@ -1,8 +1,29 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme = 'ananke'
+baseURL = "https://example.com"
+theme = 'hugo-bearblog'
 
-[caches]
-  [caches.images]
-    dir = ':cacheDir/images'
+# Basic metadata configuration for your blog.
+title = "Prefect Dev Log"
+author = "Prefect Engineering Team"
+copyright = "Copyright © 2025, Prefect Technologies Inc."
+languageCode = "en-US"
+
+enableRobotsTXT = true
+
+disableKinds = ["taxonomy"]
+ignoreErrors = ["error-disable-taxonomy"]
+[permalinks]
+  blog = "/:slug/"
+  tags = "/blog/:slug"
+
+[params]
+  description = "Create with :heart: by Prefect"
+  title = "Prefect Dev Log"
+  enablePostNavigator = true
+  hideMadeWithLine = true
+
+[markup]
+  [markup.highlight]
+    style = 'friendly'
+    lineNos = true
+    lineNumbersInTable = false
+    codeFences = true
