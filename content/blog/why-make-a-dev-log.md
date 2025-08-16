@@ -6,6 +6,7 @@ description = "Introducing Prefect’s weekly dev log: a behind-the-scenes look 
 
 [params]
     author = "Nate Nowack"
+    authorGitHubHandle = "zzstoatzz"
 +++
 
 We at Prefect love reading and writing technical content, but have also found it hard to find the time to do so. New features, maintenance, and engaging our communities make it challenging to find the time needed to write substantive technical content that we're actually pleased with.

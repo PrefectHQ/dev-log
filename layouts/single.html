@@ -3,7 +3,11 @@
 <h1>{{ .Title }}</h1>
 <p>
   {{ if .Params.author }}
+  {{ if .Params.authorGitHubHandle }}
+  By <a href="https://github.com/{{ .Params.authorGitHubHandle }}">{{ .Params.author }}</a> • 
+  {{ else }}
   By {{ .Params.author }} • 
+  {{ end }}
   {{ end }}
   <time datetime='{{ .Date.Format "2006-01-02" }}'>
     {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
