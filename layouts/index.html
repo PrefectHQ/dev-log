@@ -1,0 +1,22 @@
+{{ define "main" }}
+{{ .Content }}
+
+<h3>Recent Entries</h3>
+<ul class="blog-posts">
+  {{ range first 3 (where .Site.RegularPages "Type" "blog").ByDate.Reverse }}
+  <li>
+    <span>
+      <i>
+        <time datetime='{{ .Date.Format "2006-01-02" }}'>
+          {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+        </time>
+      </i>
+    </span>
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+  </li>
+  {{ end }}
+</ul>
+<small>
+  <a href="{{ "blog" | relURL }}">View all entries →</a>
+</small>
+{{ end }}
