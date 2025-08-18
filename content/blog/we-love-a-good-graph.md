@@ -19,7 +19,7 @@ The historical answer has been
 
 ... which is obviously not ideal.
 
-So, we've built a new Prefect command that does this for you. It's called `prefect transfer` and it will be available in [Prefect 3.4.14](https://github.com/PrefectHQ/prefect/releases). It can transfer your resources between any two profiles, so that means you migrate:
+So, we've built a new Prefect command that does this for you. It's called `prefect transfer` and it will be available in [Prefect 3.4.14](https://github.com/PrefectHQ/prefect/releases). It can transfer your resources between any two profiles, so that means you can migrate:
 - from an open-source Prefect server to a Prefect Cloud workspace
 - from a Prefect Cloud workspace to an open-source Prefect server
 - from an open-source Prefect server to another open-source Prefect server
