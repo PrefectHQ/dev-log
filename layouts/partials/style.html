@@ -161,11 +161,19 @@
   
   /* Ensure syntax highlighting extends to scrolled content */
   .highlight pre {
-    background-color: #272822 !important; /* Monokai background */
-    color: #f8f8f2 !important; /* Monokai foreground */
+    background-color: var(--code-background-color) !important;
+    color: var(--code-color) !important;
     white-space: pre;
     overflow-x: auto;
     display: block;
+  }
+  
+  /* Dark mode specific for syntax highlighted code */
+  @media (prefers-color-scheme: dark) {
+    .highlight pre {
+      background-color: #272822 !important; /* Monokai background */
+      color: #f8f8f2 !important; /* Monokai foreground */
+    }
   }
   
   /* Fix for code blocks on mobile */
