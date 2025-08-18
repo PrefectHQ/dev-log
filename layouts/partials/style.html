@@ -104,6 +104,11 @@
     background-color: var(--code-background-color);
     color: var(--code-color);
     border-radius: 3px;
+    /* Fix iOS font sizing issues */
+    text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
   }
 
   blockquote {
@@ -139,6 +144,19 @@
     margin-block-start: 1em;
     margin-block-end: 1em;
     overflow-x: auto;
+    /* Fix iOS font sizing issues */
+    text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  /* Additional fix for pre elements and line numbers */
+  pre, .highlight pre, .highlight code {
+    text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
   }
 
   /* blog post list */
