@@ -25,7 +25,6 @@ So, [we've built](https://github.com/PrefectHQ/prefect/pull/18721) a new Prefect
 - from an open-source Prefect server to another open-source Prefect server
 - from a Prefect Cloud workspace to another Prefect Cloud workspace
 
-
 How does that happen?
 
 0. In prefect, we have an idea of [profiles](https://docs.prefect.io/v3/concepts/settings-and-profiles/). Profiles are essentially a group of settings that constitute a "Prefect environment". See yours with `vim ~/.prefect/profiles.toml`
@@ -35,6 +34,8 @@ How does that happen?
 2. You identify the destination profile (where you want to move your stuff) e.g. `prod`
 
 3. You run `prefect transfer --from local --to prod`
+
+![Example of `prefect transfer` in action](/images/transfer_animation.gif)
 
 That's it! All of your:
 - [Deployments](https://docs.prefect.io/v3/concepts/deployments/)
