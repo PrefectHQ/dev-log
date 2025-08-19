@@ -35,7 +35,10 @@ How does that happen?
 
 3. You run `prefect transfer --from local --to prod`
 
-![Example of `prefect transfer` in action](/images/transfer_animation.gif)
+<video width="100%" autoplay loop muted playsinline>
+  <source src="/videos/transfer_animation.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 That's it! All of your:
 - [Deployments](https://docs.prefect.io/v3/concepts/deployments/)
