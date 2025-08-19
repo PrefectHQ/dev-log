@@ -30,7 +30,7 @@ How does that happen?
 
 0. In prefect, we have an idea of [profiles](https://docs.prefect.io/v3/concepts/settings-and-profiles/). Profiles are essentially a group of settings that constitute a "Prefect environment". See yours with `vim ~/.prefect/profiles.toml`
 
-1. You identify the source profile, e.g. `local`, that contain the settings required to talk to your environment where all your stuff lives (try `prefect profile ls`)
+1. You identify the source profile, e.g. `local`, that contains the settings required to talk to your environment where all your stuff lives (try `prefect profile ls`)
 
 2. You identify the destination profile (where you want to move your stuff) e.g. `prod`
 
