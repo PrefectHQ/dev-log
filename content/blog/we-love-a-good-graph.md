@@ -65,7 +65,7 @@ This problem might sound familiar to you. It's the same problem that [Kahn's alg
 As far as our problem is concerned, the basic idea is that each type of resource can discover its own dependencies:
 
 ```python
-class MigratableDeployment:
+class MigratableDeployment(MigratableResource[DeploymentResponse]):
     async def get_dependencies(self) -> list[MigratableProtocol]:
         deps = []
         # A deployment needs its flow
@@ -79,24 +79,38 @@ class MigratableDeployment:
         return deps
 ```
 
-and then we build a DAG informed by those dependencies that we can walk in topological order:
+We build a DAG from these dependencies. Before execution, we verify it's acyclic using three-color [DFS](https://en.wikipedia.org/wiki/Depth-first_search#Vertex_orderings).
+
+The execution uses self-spawning workers with no central scheduler:
 
 ```python
-async def execute_concurrent(self, process_node, max_workers=10):
-    # Start with nodes that have no dependencies
-    ready_queue = [nid for nid in self.nodes if not self._dependencies[nid]]
-    
-    async def worker(nid, task_group):
-        # Process the node (i.e. transfer the resource)
-        await process_node(self.nodes[nid])
-        
-        # Check if any dependents are now ready
-        for dependent_id in self._dependents[nid]:
-            if all_dependencies_completed(dependent_id):
-                task_group.start_soon(worker, dependent_id, task_group)
+async def worker(nid: uuid.UUID, tg: TaskGroup):
+    async with semaphore:  # Respect max_workers limit
+        try:
+            await process_node(node)
+            
+            # Check dependents under lock to prevent races
+            async with self._lock:
+                for dependent in self._status[nid].dependents:
+                    if all(self._status[d].state == COMPLETED 
+                           for d in dependent.dependencies):
+                        tg.start_soon(worker, dependent, tg)
+                        
+        except (TransferSkipped, Exception) as e:
+            # Both intentional skips and failures cascade to descendants
+            # TransferSkipped = "already exists", Exception = actual failure
+            to_skip = deque([nid])
+            while to_skip:
+                cur = to_skip.popleft()
+                for descendant in self._status[cur].dependents:
+                    if descendant.state in {PENDING, READY}:
+                        descendant.state = SKIPPED
+                        to_skip.append(descendant)
 ```
 
-Thus, upon `prefect transfer`, resources are transferred from one environment to another in the right order, concurrently where possible. No more scripting around 409s!
+The `semaphore` bounds concurrency, the `lock` prevents race conditions when checking dependencies, and the `deque` ensures we skip entire subtrees when failures occur. If a work pool fails, its queues get skipped but unrelated branches continue.
+
+No more scripting around 409s to move your resources around!
 
 Excited to try it? Tried it already and have issues? Let us know on [GitHub](https://github.com/PrefectHQ/prefect/discussions/new/choose)!
 
