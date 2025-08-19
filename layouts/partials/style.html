@@ -161,19 +161,41 @@
   
   /* Ensure syntax highlighting extends to scrolled content */
   .highlight pre {
-    background-color: var(--code-background-color) !important;
-    color: var(--code-color) !important;
     white-space: pre;
     overflow-x: auto;
     display: block;
   }
   
-  /* Dark mode specific for syntax highlighted code */
+  /* Line number spacing */
+  .chroma .lnt, .chroma .ln {
+    margin-right: 1.5em !important;
+    color: #999;
+  }
+  
+  /* Light mode syntax highlighting - more vibrant */
+  .chroma { background-color: var(--code-background-color); }
+  .chroma .k, .chroma .kc, .chroma .kd, .chroma .kn, .chroma .kp, .chroma .kr, .chroma .kt { color: #d73a49; font-weight: bold; } /* keywords - red */
+  .chroma .s, .chroma .sa, .chroma .sb, .chroma .sc, .chroma .dl, .chroma .sd, .chroma .s2, .chroma .se, .chroma .sh, .chroma .si, .chroma .sx, .chroma .sr, .chroma .s1 { color: #032f62; } /* strings - deep blue */
+  .chroma .m, .chroma .mb, .chroma .mf, .chroma .mh, .chroma .mi, .chroma .il, .chroma .mo { color: #005cc5; } /* numbers - bright blue */
+  .chroma .c, .chroma .ch, .chroma .cm, .chroma .c1, .chroma .cs, .chroma .cp, .chroma .cpf { color: #6a737d; font-style: italic; } /* comments - gray */
+  .chroma .na, .chroma .nx { color: #6f42c1; } /* attributes - purple */
+  .chroma .nc, .chroma .ne, .chroma .nf { color: #6f42c1; font-weight: bold; } /* classes/functions - purple bold */
+  .chroma .nb, .chroma .ni, .chroma .nt { color: #22863a; } /* builtins/tags - green */
+  .chroma .o, .chroma .ow { color: #d73a49; } /* operators - red */
+  
+  /* Dark mode syntax highlighting - vibrant but readable */
   @media (prefers-color-scheme: dark) {
-    .highlight pre {
-      background-color: #272822 !important; /* Monokai background */
-      color: #f8f8f2 !important; /* Monokai foreground */
-    }
+    .chroma { background-color: var(--code-background-color); }
+    .chroma .lnt, .chroma .ln { color: #666; }
+    .chroma .k, .chroma .kc, .chroma .kd, .chroma .kn, .chroma .kp, .chroma .kr, .chroma .kt { color: #ff79c6; font-weight: bold; } /* keywords - pink */
+    .chroma .s, .chroma .sa, .chroma .sb, .chroma .sc, .chroma .dl, .chroma .sd, .chroma .s2, .chroma .se, .chroma .sh, .chroma .si, .chroma .sx, .chroma .sr, .chroma .s1 { color: #f1fa8c; } /* strings - yellow */
+    .chroma .m, .chroma .mb, .chroma .mf, .chroma .mh, .chroma .mi, .chroma .il, .chroma .mo { color: #bd93f9; } /* numbers - purple */
+    .chroma .c, .chroma .ch, .chroma .cm, .chroma .c1, .chroma .cs, .chroma .cp, .chroma .cpf { color: #6272a4; font-style: italic; } /* comments */
+    .chroma .na, .chroma .nx { color: #50fa7b; } /* attributes - green */
+    .chroma .nc, .chroma .ne, .chroma .nf { color: #50fa7b; font-weight: bold; } /* classes/functions */
+    .chroma .nb, .chroma .ni { color: #8be9fd; } /* builtins - cyan */
+    .chroma .nt { color: #ff79c6; } /* tags - pink */
+    .chroma .o, .chroma .ow { color: #ff79c6; } /* operators */
   }
   
   /* Fix for code blocks on mobile */
