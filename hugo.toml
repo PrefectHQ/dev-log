@@ -30,3 +30,14 @@ noClasses = false
 lineNos = true
 lineNumbersInTable = false
 codeFences = true
+
+[outputs]
+home = ["HTML", "RSS"]
+section = ["HTML", "RSS"]
+
+[outputFormats.RSS]
+mediaType = "application/rss+xml"
+baseName = "index"
+
+[services.rss]
+limit = -1
