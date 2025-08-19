@@ -22,6 +22,9 @@ enablePostNavigator = true
 favicon = "images/favicon.png"
 
 [markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
 [markup.highlight]
 noClasses = false
 lineNos = true
