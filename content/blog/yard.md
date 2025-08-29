@@ -2,6 +2,9 @@
 title = "Y.A.R.D. (Yet Another Retry Decorator)"
 date = "2025-08-29T13:00:45-05:00"
 description = "In which I attempt to justify introducing a dedicated retry decorator to Prefect"
+[params]
+    author = "Alex Streed"
+    authorGitHubHandle = "desertaxle"
 
 tags = ["orchestration",]
 +++
