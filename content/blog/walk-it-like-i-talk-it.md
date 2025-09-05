@@ -10,10 +10,14 @@ description = "Working towards a high availability Prefect server"
 +++
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 One of the most common questions from OSS Prefect users is:
 =======
 One of the most common questions from users is:
 >>>>>>> 16874c9 (walk it like i talk it)
+=======
+One of the most common questions from OSS Prefect users is:
+>>>>>>> 2df0aca (word)
 
 > How do I run open-source Prefect server in a high availability ([HA](https://en.wikipedia.org/wiki/High_availability)) mode?
 
