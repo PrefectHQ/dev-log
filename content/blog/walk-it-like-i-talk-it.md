@@ -15,7 +15,7 @@ One of the most common questions from OSS Prefect users is:
 
 Historically, it hasn't been directly possible, for a couple reasons:
 - in-memory event-bus
-- related "singleton server" assumptions (e.g. caching automation objects in memory)
+- "singleton server" assumptions (e.g. caching automation objects in memory)
 
 Recently, we've been [working towards](https://github.com/PrefectHQ/prefect/discussions/18150) allowing users to run a setup that you can reasonably call HA, by:
 - [implementing a Redis Streams-based messaging implementation](https://github.com/PrefectHQ/prefect/pull/16432)
@@ -31,7 +31,7 @@ So, in the words of the visionary triumvirate known as [Migos](https://www.wikip
 
 ... that is to say, we must run and use the HA setup that we suggest to others.
 
-We always compulsively test fixes and features against actual prefect servers, but it's been a while since we've made a concerted effort to scale a single server installation. The new and broad interest in HA server configurations has made it a great time to do so!
+We always compulsively test fixes and features against actual prefect servers, but it's been a while since we've made a concerted effort to scale a single server installation. The new/broad interest in HA server configurations has made it a great time to do so!
 
 ## Making our test bed before we lay in it
 
