@@ -9,7 +9,7 @@ description = "Working towards a high availability Prefect server"
     authorGitHubHandle = "zzstoatzz"
 +++
 
-One of the most common questions from users is:
+One of the most common questions from OSS Prefect users is:
 
 > How do I run open-source Prefect server in a high availability ([HA](https://en.wikipedia.org/wiki/High_availability)) mode?
 
