@@ -1,7 +1,7 @@
 +++
 title = "LLM assisted accountability"
 date = "2025-08-16T10:43:06-05:00"
-tags = ['meta', 'ai']
+tags = ['meta', 'ai', 'claude code']
 description = "I often forget to write, so here's how I'll keep myself accountable to writing a dev log entry every week."
 
 [params]
