@@ -1,7 +1,7 @@
 +++
 title = "Just do the thing"
 date = "2025-09-12T10:43:06-05:00"
-tags = ['dev workflow', ]
+tags = ['dev workflow', 'ai']
 description = "Extinguishing bespoke dev workflows, one just recipe at a time"
 
 [params]
