@@ -1,6 +1,6 @@
 +++
 title = "Transparent migrations"
-date = "2025-09-13T10:00:00-05:00"
+date = "2025-09-12T20:00:00-05:00"
 description = "On migrating Prefect’s tag-based concurrency to global concurrency limits by changing the implementation, but not the contract."
 tags = ["migration", "concurrency", "dev-ex"]
 
