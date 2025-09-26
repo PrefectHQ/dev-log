@@ -33,6 +33,20 @@ well..
 {{< tweet user="gdb" id="1733553161884127435" >}}
 
 
+#### ok so.. evals for MCP?
+
+> what capabilities do clients have when connected to an MCP server?
+
+is not the same question as:
+
+> what is literally exposed by my MCP server?
+
+clients might have other capabilities, like using a more general interface (e.g. terminal a la Claude Code) where the user might prefer more sensitive operations to happen
+
+so, if we want to evaluate that an MCP client can do a thing on behalf of a user, we just need to set up an initial condition, and let the client loop with its tools/MCP servers until it achieves the desired outcome (perhaps asserting that this happened a particular way)
+
+by extension, if you restrict the set of tools to only your MCP server, you can evaluate that your MCP server enables clients in general to have a particular capability on behalf of a user.
+
 
 ```python
 @pytest.fixture
