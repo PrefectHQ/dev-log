@@ -9,7 +9,7 @@ description = "How Logfire became a key tool in our MCP development workflow"
     authorGitHubHandle = "desertaxle"
 +++
 
-This week I got to spend a good chunk of time working with Nate on an [MCP](https://modelcontextprotocol.io/docs/getting-started/intro) server for Prefect. Nate had already written a bunch of functionality for the server and we wanted to prove that giving an agent MCP access actually improves diagnosing tricky Prefect issues. So we built some really cool evals using [`pydantic-ai`](https://ai.pydantic.dev/). Sometimes they would pass, sometimes they would fail, but it wasn't clear why.
+This week I got to spend a good chunk of time working with Nate on an [MCP](https://modelcontextprotocol.io/docs/getting-started/intro) server for Prefect. Nate had already written a bunch of functionality for the server and we wanted to prove that giving an agent MCP access actually improves diagnosing tricky Prefect issues. So we built some really cool evals using [`pydantic-ai`](https://ai.pydantic.dev/) (check out [Nate's dev log entry](https://dev-log.prefect.io/mcpval/) for more info on our eval approach). Sometimes they would pass, sometimes they would fail, but it wasn't clear why.
 
 The problem was that we would only get the final output from our eval agent. Debugging agent behavior with only final output is like trying to reconstruct a crime scene from a single footprint. We really wanted to know which tools our eval agents were calling and what parameters they were passing to know if we were exposing our tools optimally.
 
