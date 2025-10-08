@@ -1,6 +1,6 @@
 +++
 title = "a Prefect MCP server"
-date = "2025-09-25T09:43:51-05:00"
+date = "2025-10-08T09:43:51-05:00"
 
 description = "an alpha version of the Prefect MCP server is now available!"
 
