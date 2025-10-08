@@ -14,7 +14,7 @@ tags = ["ai", "MCP"]
 
 An alpha version of [the Prefect MCP server](https://github.com/PrefectHQ/prefect-mcp-server) is now available!
 
-See our recent post on [MCPval](https://dev-log.prefect.io/mcpval) for more details on how we're using evals to back out a useful MCP server.
+See our recent post on [MCPval](https://dev-log.prefect.io/mcpval) for more details on how we're using [evals](https://github.com/PrefectHQ/prefect-mcp-server/issues/27) to back out a useful MCP server.
 
 
 That's the post!
