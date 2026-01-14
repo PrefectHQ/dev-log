@@ -11,7 +11,7 @@ description = "Assimilating `docket`, a new asynchronous background task system 
 
 ### trouble lurking in the background
 
-most people know `prefect` as a Python library for defining, running, and monitoring workflows. some people, especially those running an open-source Prefect server, know that `prefect` is a client-server application that has a backing database and suite of supporting background services.
+most people know `prefect` as a Python library for defining, running, and monitoring workflows. some people, especially those running an open-source Prefect server, know that `prefect` is a client-server application that has a [backing database and suite of supporting background services](https://docs.prefect.io/v3/advanced/self-hosted#architecture).
 
 these background services have historically been called "loop services" because they each ran as a single process with a polling loop that found work and did work in the same process. this made them easy to reason about and deploy, but it also limited their ability to safely scale horizontally as there was the potential for multiple instances to fight over the same work (i.e. contention).
 
