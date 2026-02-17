@@ -8,4 +8,9 @@
       </g>
       </svg>
   </a>
+  {{ with .Site.Data.roast_bot }}
+  <div style="margin-top: 8px; font-size: 0.85em; color: #888;">
+    roast-bot last ran: {{ .last_run | time.Format "Jan 2, 2006" }}
+  </div>
+  {{ end }}
 </div>
