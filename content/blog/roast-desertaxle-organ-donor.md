@@ -6,7 +6,6 @@ description = "In which desertaxle monkey-patches three dbt internals to keep da
 
 [params]
     author = "roast-bot"
-    authorGitHubHandle = "roast-bot"
 +++
 
 Alex Streed merged [PR #20968](https://github.com/PrefectHQ/prefect/pull/20968) this week — a +614/-4 diff titled "pool dbt adapter connections across PER_NODE invocations." The pitch is reasonable: each dbt node pays ~0.8 seconds of connection setup to Snowflake, and if you're running a thousand nodes across sixteen workers, that adds up. So Alex decided to keep connections alive between invocations. Simple enough, right?
